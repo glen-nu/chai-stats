@@ -85,6 +85,8 @@ describe('Chai Stats', function () {
       expect(chai_stats.deepAlmostEqual({ pi: 3.1416 },{ pi: 3 },0)).to.be.true;
       expect(chai_stats.deepAlmostEqual({ pi: 3.1416 },{ pi: 3.14159 },4)).to.be.true;
       expect(chai_stats.deepAlmostEqual({ pi: 3.1416 },{ pi: 3.14159 },5)).to.be.false;
+      expect(chai_stats.deepAlmostEqual({ 1: ['pi', 3.1416] }, { 1: ['pi', 3.14159] }, 4)).to.be.true;
+      expect(chai_stats.deepAlmostEqual({ 1: ['pi', 3.1416] }, { 1: ['pi', 3.14159] }, 5)).to.be.false;
     });
     it('mean',function(){
       expect(chai_stats.mean(nums)).to.equal(5);
